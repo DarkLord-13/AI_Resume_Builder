@@ -2,9 +2,9 @@ import java.util.*;
 
 public class a {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int m = scanner.nextInt();
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
         int[][] dp = new int[n + 1][m + 1];
         for (int i = 0; i <= n; i++) {
             for (int j = 0; j <= m; j++) {
@@ -18,7 +18,7 @@ public class a {
             }
         }
 
-        scanner.close();
+        sc.close();
         System.out.println(dp[n][m]);
     }
 }
