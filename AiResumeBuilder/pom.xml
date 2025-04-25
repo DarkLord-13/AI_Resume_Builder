@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>AiResumeBuilder</artifactId>
+	<artifactId>AIResumeBuilderBackend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>AiResumeBuilder</name>
 	<description>AI Resume Builder using SpringBoot, React, Html, CSS, TailWind and Postgres.</description>

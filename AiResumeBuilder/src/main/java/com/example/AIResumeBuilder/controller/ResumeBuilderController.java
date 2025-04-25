@@ -1,6 +1,6 @@
-package com.example.AiResumeBuilder.controller;
+package com.example.AIResumeBuilder.controller;
 
-import com.example.AiResumeBuilder.service.ResumeBuilderService;
+import com.example.AIResumeBuilder.service.ResumeBuilderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

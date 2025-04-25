@@ -1,4 +1,4 @@
-package com.example.AiResumeBuilder;
+package com.example.AIResumeBuilder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
