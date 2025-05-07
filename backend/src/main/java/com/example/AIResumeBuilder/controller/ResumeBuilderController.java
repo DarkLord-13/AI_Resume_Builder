@@ -29,14 +29,14 @@ public class ResumeBuilderController{
             @RequestParam(value = "instructions", required = true) String instructions
     ){
         try{
-            System.out.println(resumeFile);
-            System.out.println(jdFile);
-            System.out.println(jdText);
-            System.out.println(instructions);
+//            System.out.println(resumeFile);
+//            System.out.println(jdFile);
+//            System.out.println(jdText);
+//            System.out.println(instructions);
             List<String> resJdInstruc = resumeBuilderService.processUserInput(resumeFile, jdFile, jdText, instructions);
 
-            String llmPrompt = llmService.createPrompt(resJdInstruc);
-            System.out.println(llmPrompt);
+            String llmPrompt = llmService.generatePrompt(resJdInstruc); // here we have the final prompt needed to create resume
+//            System.out.println(llmPrompt);
 
             String generatedResume = llmService.createResume(llmPrompt);
 
