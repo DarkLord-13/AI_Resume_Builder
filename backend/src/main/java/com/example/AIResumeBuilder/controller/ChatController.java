@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -30,6 +29,6 @@ public class ChatController{
         Prompt finalPrompt = new Prompt(new UserMessage(prompt));
         ChatResponse response = this.chatModel.call(finalPrompt);
 
-        return Map.of("result", response.getResult().getOutput());
+        return Map.of("text", response.getResult().getOutput().getText());
     }
 }

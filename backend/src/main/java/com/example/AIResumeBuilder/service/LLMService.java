@@ -1,11 +1,18 @@
 package com.example.AIResumeBuilder.service;
 
+import com.example.AIResumeBuilder.controller.ChatController;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class LLMService{
+    @Autowired
+    ChatController chatController;
+
     public String generatePrompt(List<String> resJdInstruc) {
         String resumeContent = resJdInstruc.get(0);
         String jdContent = resJdInstruc.get(1);
@@ -50,17 +57,14 @@ public class LLMService{
         promptBuilder.append("8. Eliminate first-person pronouns; use clear, concise language.\n");
         promptBuilder.append("9. Provide consistent formatting for headings, bullet styles, and indentation.\n");
         promptBuilder.append("10. Include an optional 'Interests' or 'Additional Information' section to showcase cultural fit if space allows.\n\n");
+        promptBuilder.append("return the generated resume in the way which i can simply copy and paste it in a word file and everything will be perfect. there should be no need to make any further changes.\n\n");
 
         return promptBuilder.toString();
     }
 
 
-    public String createResume(String llmPrompt) {
-        // Call the LLM API with the prompt and get the generated resume
-        // For now, let's just return a dummy response
-        String generatedResume = "Generated Resume based on the provided prompt: " + llmPrompt;
-
-        return generatedResume;
+    public String createResume(String llmPrompt) throws JsonProcessingException {
+        return chatController.generate(llmPrompt).get("text").toString();
     }
 
 
